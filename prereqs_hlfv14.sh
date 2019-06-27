@@ -16,6 +16,7 @@ source ~/.profile
 sudo apt-get install -y curl golang-go
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get -y install apt-transport-https ca-certificates
 sudo apt-get install python
 sudo apt-get update -y
 sudo apt-cache policy docker-ce
@@ -28,12 +29,23 @@ sudo bash nodesource_setup.sh && sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential checkinstall libssl-dev
 sudo apt-get upgrade -y
 
-##### displaying docker version
-echo "Docker version should be  > 17.0 and  current version installed as give below"
-docker --version 
-echo "Docker-composer version should be > 1.13 and current version installed as give below"
-docker-compose --version 
-echo "Nodjs version should be > 8.0 and current version installed as give below"
-nodejs --version 
-echo "Nodjs version should be > 6.0 and current version installed as give below"
+
+##### Add user account to the docker group
+sudo usermod -aG docker $(whoami)
+
+####  Print installation details for user
+echo ''
+echo 'Installation completed, versions installed are:'
+echo ''
+echo -n 'Node:           '
+node --version
+echo -n 'npm:            '
 npm --version
+echo -n 'Docker:         '
+docker --version
+echo -n 'Docker Compose: '
+docker-compose --version
+echo -n 'Python:         '
+python -V
+
+echo " Logout/login back for the changes to take effect."
