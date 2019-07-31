@@ -8,6 +8,6 @@
 #yo version 2.05
 
 
-npm install -g composer-cli composer-rest-server generator-hyperledger-composer yo
-npm install -g composer-playground
+npm install -g yo composer-cli@0.20.8 composer-rest-server@0.20.8 generator-hyperledger-composer@0.20.8
+npm install -g composer-playground@0.20.8 composer-connector-server@0.20.8
 
