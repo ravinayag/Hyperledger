@@ -4,8 +4,8 @@ Part of a PoC to explore blockchain solutions. I choosed Hyperledger a open sour
 #### Network Setup:
 The network will contain two  Nodes ( Hosts) Node 00 and Node01  and mapped to  Org1 & Org2 respectively.
 
-Host1 : Orderer, CA0, Org1- Peer0, peer1, peer2
-Host2 : CA1, Org2- Peer0,  peer1, peer2
+* Host1 : Orderer, CA0, Org1- Peer0, peer1, peer2
+* Host2 : CA1, Org2- Peer0,  peer1, peer2
 
 we will have 1 Orderer and 2 CA’s  as recommended and best practice followed  that each Org should have its own CA and multiple orderers to avoid a single point of failure. ( We will add orderers,Orgs, Peers separately to exsisting setup)
 
