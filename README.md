@@ -80,4 +80,50 @@ $ composer network ping –c peeradmin@sample-network
 ```
 You will get ping response as below screen shoot
 
+#### Now we are ready to access the network through composer
 
+Run this command on your terminal and open the browser to access your network.
+
+```bash
+$ composer-playground -p 8181 &
+
+on Browser
+http://server_IP:8181 
+
+```
+You Can Play around now. 
+
+
+## Lets start REST services for the  same network.
+
+Hyperledger Composer includes a standalone Node.js process that exposes a business network as a REST API. 
+The LoopBack framework is used to generate an Open API, described by a Swagger document.
+
+To launch the REST Server simply type:
+```bash
+$composer-rest-server
+```
+You will then be asked to enter a few simple details about your business network. An example of consuming a deployed business network is shown below.
+```bash
+? Enter the name of the business network card to use: alice@sample-network
+? Specify if you want namespaces in the generated REST API: always use namespaces  
+? Specify if you want to enable authentication for the REST API using Passport: No 
+? Specify if you want to enable event publication over WebSockets: Yes             
+? Specify if you want to enable TLS security for the REST API: No
+
+To restart the REST server using the same options, issue the following command:
+   
+   composer-rest-server -c alice@sample-network -n always -w true
+   
+   Discovering types from business network definition ...                    
+   Discovered types from business network definition                          
+   Generating schemas for all types in business network definition ...         
+   Generated schemas for all types in business network definition                 
+   Adding schemas for all types to Loopback ...                                    
+   Added schemas for all types to Loopback                                          
+   
+
+  Web server listening at: http://localhost:3000
+
+  Browse your REST API at http://localhost:3000/explorer
+```
